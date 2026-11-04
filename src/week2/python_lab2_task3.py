@@ -34,11 +34,8 @@ OPERATORS = ['+', '-', '*', '/', '(', ')']
 
 def count_operators(expression: str) -> dict[str, int]:
     """Return a dict with the count of each operator in expression."""
-    dictionary = {op: 0 for op in OPERATORS}
-    for i in expression:
-        if dictionary.get(i, None) != None:
-            dictionary[i] += 1
-    return dictionary
+    return {x: expression.count(x) for x in OPERATORS }
+
 
 if __name__ == "__main__":
     expression = input("Enter an arithmetic expression: ")
